@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="mb-4">Inscription</h1>
+
+		{{ form_errors(registrationForm) }}
+
+		{{ form_start(registrationForm, {'attr': {'class': 'form'}}) }}
+		<div class="mb-3">
+			{{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Adresse email'}}) }}
+		</div>
+		<div class="mb-3">
+			{{ form_row(registrationForm.plainPassword, {
+                    'label': 'Mot de passe',
+                    'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}
+                }) }}
+		</div>
+		<div class="form-check mb-3">
+			{{ form_row(registrationForm.agreeTerms, {'label_attr': {'class': 'form-check-label'}, 'attr': {'class': 'form-check-input'}}) }}
+		</div>
+
+		<button type="submit" class="btn btn-primary">S'inscrire</button>
+		{{ form_end(registrationForm) }}
+	</div>
+{% endblock %}
