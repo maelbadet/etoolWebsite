@@ -65,7 +65,8 @@ class __TwigTemplate_eae0608d9e8e3b43bb0e34eab3267536 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello HomePageController!
+        // line 4
+        echo "\t<title>Accueil</title>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -75,7 +76,7 @@ class __TwigTemplate_eae0608d9e8e3b43bb0e34eab3267536 extends Template
 
     }
 
-    // line 6
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -85,20 +86,8 @@ class __TwigTemplate_eae0608d9e8e3b43bb0e34eab3267536 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        echo "\t<style>
-\t\t.example-wrapper {
-\t\t\tmargin: 1em auto;
-\t\t\tmax-width: 800px;
-\t\t\twidth: 95%;
-\t\t\tfont: 18px / 1.5 sans-serif;
-\t\t}
-\t\t.example-wrapper code {
-\t\t\tbackground: #F5F5F5;
-\t\t\tpadding: 2px 6px;
-\t\t}
-\t</style>
-
+        // line 8
+        echo "
 \t<div class=\"example-wrapper\">
 \t\t<h1>Bienvenu sur le site Etool</h1>
 \t\t<h2>Le premier gestionnaire d'outillage sortis par Clemessy</h2>
@@ -153,29 +142,18 @@ class __TwigTemplate_eae0608d9e8e3b43bb0e34eab3267536 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  89 => 7,  79 => 6,  59 => 3,  36 => 1,);
+        return array (  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello HomePageController!
+{% block title %}
+\t<title>Accueil</title>
 {% endblock %}
 
 {% block body %}
-\t<style>
-\t\t.example-wrapper {
-\t\t\tmargin: 1em auto;
-\t\t\tmax-width: 800px;
-\t\t\twidth: 95%;
-\t\t\tfont: 18px / 1.5 sans-serif;
-\t\t}
-\t\t.example-wrapper code {
-\t\t\tbackground: #F5F5F5;
-\t\t\tpadding: 2px 6px;
-\t\t}
-\t</style>
 
 \t<div class=\"example-wrapper\">
 \t\t<h1>Bienvenu sur le site Etool</h1>
@@ -202,6 +180,6 @@ class __TwigTemplate_eae0608d9e8e3b43bb0e34eab3267536 extends Template
 \t\t\tIci, il y aura les derniers echange effectuer</p>
 \t</div>
 {% endblock %}
-", "home_page/index.html.twig", "C:\\laragon\\www\\etoolWebiste\\templates\\home_page\\index.html.twig");
+", "home_page/index.html.twig", "C:\\laragon\\www\\nouveau_code_appli_etool\\etoolWebsite\\templates\\home_page\\index.html.twig");
     }
 }

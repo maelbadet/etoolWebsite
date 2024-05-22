@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	<title>Outils - Création</title>
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1>Création d'outil</h1>
+
+		{% for message in app.flashes('error') %}
+			<div class="alert alert-danger">{{ message }}</div>
+		{% endfor %}
+
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">{{ message }}</div>
+		{% endfor %}
+
+		{{ form_start(form, {'attr': {'class': 'form'}}) }}
+		<div class="form-group">
+			{{ form_label(form.name) }}
+			{{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+		</div>
+
+		<div class="form-group">
+			{{ form_label(form.description) }}
+			{{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+		</div>
+
+		<button type="submit" class="btn btn-primary">Enregistrer</button>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}

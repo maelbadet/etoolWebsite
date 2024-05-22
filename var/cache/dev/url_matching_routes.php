@@ -15,14 +15,16 @@ return [
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
-        '/Etool' => [[['_route' => 'app_home_page', '_controller' => 'App\\Controller\\HomePageController::index'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'app_home_page', '_controller' => 'App\\Controller\\HomePageController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
-        '/' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
-        '/tools' => [[['_route' => 'app_tools', '_controller' => 'App\\Controller\\ToolsController::index'], null, null, null, false, false, null]],
+        '/tools/creation' => [[['_route' => 'app_tools_creation', '_controller' => 'App\\Controller\\ToolsController::index'], null, null, null, false, false, null]],
+        '/tools' => [[['_route' => 'app_tools', '_controller' => 'App\\Controller\\ToolsController::toolHome'], null, null, null, false, false, null]],
         '/user' => [[['_route' => 'app_user_index', '_controller' => 'App\\Controller\\UserController::index'], null, ['GET' => 0], null, true, false, null]],
         '/user/new' => [[['_route' => 'app_user_new', '_controller' => 'App\\Controller\\UserController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/worksite' => [[['_route' => 'app_worksite', '_controller' => 'App\\Controller\\WorksiteController::index'], null, null, null, false, false, null]],
+        '/worksite/create' => [[['_route' => 'app_worksite_create', '_controller' => 'App\\Controller\\WorksiteController::create'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -44,11 +46,13 @@ return [
                         .')'
                     .')'
                 .')'
+                .'|/tools/([^/]++)(*:217)'
                 .'|/user/([^/]++)(?'
-                    .'|(*:219)'
-                    .'|/edit(*:232)'
-                    .'|(*:240)'
+                    .'|(*:242)'
+                    .'|/edit(*:255)'
+                    .'|(*:263)'
                 .')'
+                .'|/worksite/([^/]++)(*:290)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -60,10 +64,12 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        219 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        232 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        240 => [
-            [['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null],
+        217 => [[['_route' => 'app_tools_id', '_controller' => 'App\\Controller\\ToolsController::toolId'], ['id'], null, null, false, true, null]],
+        242 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        255 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        263 => [[['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        290 => [
+            [['_route' => 'app_worksite_show', '_controller' => 'App\\Controller\\WorksiteController::show'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

@@ -65,7 +65,7 @@ class __TwigTemplate_1779491d41a4cbeb679a3ba709d4cfa8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello WorksiteController!";
+        echo "Liste des chantiers";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,23 +85,42 @@ class __TwigTemplate_1779491d41a4cbeb679a3ba709d4cfa8 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/laragon/www/etoolWebiste/src/Controller/WorksiteController.php</code></li>
-        <li>Your template at <code>C:/laragon/www/etoolWebiste/templates/worksite/index.html.twig</code></li>
-    </ul>
-</div>
+        echo "    <div class=\"container mt-5\">
+        <h1 class=\"text-center\">Liste des chantiers</h1>
+        <div class=\"row mt-3\">
+            <div class=\"col-md-12\">
+                <ul class=\"list-group\">
+                    ";
+        // line 11
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["worksites"]) || array_key_exists("worksites", $context) ? $context["worksites"] : (function () { throw new RuntimeError('Variable "worksites" does not exist.', 11, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["worksite"]) {
+            // line 12
+            echo "                        <li class=\"list-group-item\">
+                            <a href=\"";
+            // line 13
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_worksite_show", ["id" => twig_get_attribute($this->env, $this->source, $context["worksite"], "id", [], "any", false, false, false, 13)]), "html", null, true);
+            echo "\">
+                                <h5>";
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["worksite"], "title", [], "any", false, false, false, 14), "html", null, true);
+            echo "</h5>
+                                <p>";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["worksite"], "description", [], "any", false, false, false, 15), "html", null, true);
+            echo "</p>
+                            </a>
+                        </li>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['worksite'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 19
+        echo "                </ul>
+            </div>
+        </div>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -132,31 +151,34 @@ class __TwigTemplate_1779491d41a4cbeb679a3ba709d4cfa8 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  120 => 19,  110 => 15,  106 => 14,  102 => 13,  99 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello WorksiteController!{% endblock %}
+{% block title %}Liste des chantiers{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/laragon/www/etoolWebiste/src/Controller/WorksiteController.php</code></li>
-        <li>Your template at <code>C:/laragon/www/etoolWebiste/templates/worksite/index.html.twig</code></li>
-    </ul>
-</div>
+    <div class=\"container mt-5\">
+        <h1 class=\"text-center\">Liste des chantiers</h1>
+        <div class=\"row mt-3\">
+            <div class=\"col-md-12\">
+                <ul class=\"list-group\">
+                    {% for worksite in worksites %}
+                        <li class=\"list-group-item\">
+                            <a href=\"{{ path('app_worksite_show', {id: worksite.id}) }}\">
+                                <h5>{{ worksite.title }}</h5>
+                                <p>{{ worksite.description }}</p>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
-", "worksite/index.html.twig", "C:\\laragon\\www\\etoolWebiste\\templates\\worksite\\index.html.twig");
+", "worksite/index.html.twig", "C:\\laragon\\www\\nouveau_code_appli_etool\\etoolWebsite\\templates\\worksite\\index.html.twig");
     }
 }

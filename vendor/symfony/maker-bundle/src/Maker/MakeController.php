@@ -83,7 +83,7 @@ final class MakeController extends AbstractMaker
         ]);
 
         $templateName = Str::asFilePath($controllerClassNameDetails->getRelativeNameWithoutSuffix())
-            .($isInvokable ? '.html.twig' : '/index.html.twig');
+            .($isInvokable ? '.html.twig' : '/exo1.html.twig');
 
         $controllerPath = $generator->generateController(
             $controllerClassNameDetails->getFullName(),

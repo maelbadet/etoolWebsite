@@ -42,36 +42,58 @@ class __TwigTemplate_3400bc843c394a98b225011fae379eed extends Template
         // line 1
         echo "<nav class=\"navbar navbar-expand-lg bg-body-tertiary bg-dark\">
 \t<div class=\"container-fluid\">
-\t\t<a class=\"navbar-brand text-light\" href=\"#\">Navbar</a>
 \t\t<button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 \t\t\t<span class=\"navbar-toggler-icon text-light\"></span>
 \t\t</button>
 \t\t<div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
 \t\t\t<ul class=\"navbar-nav\">
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link text-light active \" aria-current=\"page\" href=\"#\">Home</a>
+\t\t\t\t\t<a class=\"nav-link text-light active\" aria-current=\"page\" href=\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_page");
+        echo "\">
+\t\t\t\t\t\t<img src=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/etool.png"), "html", null, true);
+        echo "\" style=\"max-width: 100px; max-height: 100px\" alt=\"Etool\">
+\t\t\t\t\t</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link text-light\" href=\"#\">Features</a>
+\t\t\t\t\t<a class=\"nav-link text-light\" href=\"";
+        // line 14
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_worksite");
+        echo "\">Chantiers</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link text-light\" href=\"#\">Pricing</a>
+\t\t\t\t\t<a class=\"nav-link text-light\" href=\"";
+        // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tools");
+        echo "\">Outils</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item dropdown\">
 \t\t\t\t\t<a class=\"nav-link text-light dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-\t\t\t\t\t\tDropdown link
+\t\t\t\t\t\tCreer des QR codes
 \t\t\t\t\t</a>
 \t\t\t\t\t<ul class=\"dropdown-menu bg-dark\">
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"#\">Action</a>
+\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"";
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_worksite_create");
+        echo "\">Nouveau chantier</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"#\">Another action</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"#\">Something else here</a>
+\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"";
+        // line 28
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tools_creation");
+        echo "\">Nouvel outil</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t</ul>
+\t\t\t\t</li>
+\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t<a class=\"nav-link text-light\" href=\"";
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+        echo "\">Admin</a>
 \t\t\t\t</li>
 \t\t\t</ul>
 \t\t</div>
@@ -97,50 +119,59 @@ class __TwigTemplate_3400bc843c394a98b225011fae379eed extends Template
     /**
      * @codeCoverageIgnore
      */
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
     public function getDebugInfo()
     {
-        return array (  43 => 1,);
+        return array (  95 => 33,  87 => 28,  81 => 25,  70 => 17,  64 => 14,  57 => 10,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<nav class=\"navbar navbar-expand-lg bg-body-tertiary bg-dark\">
 \t<div class=\"container-fluid\">
-\t\t<a class=\"navbar-brand text-light\" href=\"#\">Navbar</a>
 \t\t<button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 \t\t\t<span class=\"navbar-toggler-icon text-light\"></span>
 \t\t</button>
 \t\t<div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
 \t\t\t<ul class=\"navbar-nav\">
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link text-light active \" aria-current=\"page\" href=\"#\">Home</a>
+\t\t\t\t\t<a class=\"nav-link text-light active\" aria-current=\"page\" href=\"{{ path('app_home_page') }}\">
+\t\t\t\t\t\t<img src=\"{{ asset('images/etool.png') }}\" style=\"max-width: 100px; max-height: 100px\" alt=\"Etool\">
+\t\t\t\t\t</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link text-light\" href=\"#\">Features</a>
+\t\t\t\t\t<a class=\"nav-link text-light\" href=\"{{ path('app_worksite') }}\">Chantiers</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link text-light\" href=\"#\">Pricing</a>
+\t\t\t\t\t<a class=\"nav-link text-light\" href=\"{{ path('app_tools') }}\">Outils</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item dropdown\">
 \t\t\t\t\t<a class=\"nav-link text-light dropdown-toggle\" href=\"#\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-\t\t\t\t\t\tDropdown link
+\t\t\t\t\t\tCreer des QR codes
 \t\t\t\t\t</a>
 \t\t\t\t\t<ul class=\"dropdown-menu bg-dark\">
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"#\">Action</a>
+\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"{{ path('app_worksite_create') }}\">Nouveau chantier</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"#\">Another action</a>
-\t\t\t\t\t\t</li>
-\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"#\">Something else here</a>
+\t\t\t\t\t\t\t<a class=\"dropdown-item text-light\" href=\"{{ path('app_tools_creation') }}\">Nouvel outil</a>
 \t\t\t\t\t\t</li>
 \t\t\t\t\t</ul>
+\t\t\t\t</li>
+\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t<a class=\"nav-link text-light\" href=\"{{path('admin')}}\">Admin</a>
 \t\t\t\t</li>
 \t\t\t</ul>
 \t\t</div>
 \t</div>
 </nav>
-", "header_footer/header.html.twig", "C:\\laragon\\www\\etoolWebiste\\templates\\header_footer\\header.html.twig");
+", "header_footer/header.html.twig", "C:\\laragon\\www\\nouveau_code_appli_etool\\etoolWebsite\\templates\\header_footer\\header.html.twig");
     }
 }

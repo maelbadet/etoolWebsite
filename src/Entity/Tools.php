@@ -19,8 +19,6 @@ class Tools
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $qr_code = null;
 
     #[ORM\Column(nullable: true)]
     private ?bool $maintenance = null;
@@ -50,18 +48,6 @@ class Tools
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getQrCode(): ?string
-    {
-        return $this->qr_code;
-    }
-
-    public function setQrCode(string $qr_code): static
-    {
-        $this->qr_code = $qr_code;
 
         return $this;
     }
