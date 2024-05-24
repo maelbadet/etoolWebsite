@@ -71,22 +71,35 @@ class WorksiteController extends AbstractController
             ]);
             $data = $response->toArray();
             if (!empty($data)) {
-                $latitude = $data["locations"][0]['latitude'];
-                $longitude = $data["locations"][0]['longitude'];
-                // Sauvegarde des coordonnées dans l'entité Worksite
-                $worksite->setTitle($title);
-                $worksite->setDescription($description);
-                $worksite->setCity($city);
-                $worksite->setPostalCode($postal_code);
-                $worksite->setAddress($address);
-                $worksite->setLatitude($latitude);
-                $worksite->setLongitude($longitude);
+                if (isset($data["locations"]) || isset($data["locations"])) {
+                    if (isset($data["locations"][0]) || isset($data["locations"][0])) {
+                        if (isset($data["locations"][0]['latitude']) || isset($data["locations"][0]['longitude'])) {
+                            $latitude = $data["locations"][0]['latitude'];
+                            $longitude = $data["locations"][0]['longitude'];
+                            // Sauvegarde des coordonnées dans l'entité Worksite
+                            $worksite->setTitle($title);
+                            $worksite->setDescription($description);
+                            $worksite->setCity($city);
+                            $worksite->setPostalCode($postal_code);
+                            $worksite->setAddress($address);
+                            $worksite->setLatitude($latitude);
+                            $worksite->setLongitude($longitude);
 
-                $this->entityManager->persist($worksite);
-                $this->entityManager->flush();
+                            $this->entityManager->persist($worksite);
+                            $this->entityManager->flush();
 
-                $this->addFlash('success', 'Le chantier a été créé avec succès.');
-                return $this->redirectToRoute('app_worksite');
+                            $this->addFlash('success', 'Le chantier a été créé avec succès.');
+                            return $this->redirectToRoute('app_worksite');
+
+                        }else{
+                            $this->addFlash('error', 'L\'adresse donner na pas ete trouver.');
+                        }
+                    }else{
+                        $this->addFlash('error', 'L\'adresse donner na pas ete trouver.');
+                    }
+                }else{
+                    $this->addFlash('error', 'L\'adresse donner na pas ete trouver.');
+                }
             } else {
                 $this->addFlash('error', 'Impossible de géocoder l\'adresse.');
             }

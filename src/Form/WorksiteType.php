@@ -15,18 +15,23 @@ class WorksiteType extends AbstractType
         $builder
             ->add('title', TextType::class, [
                 'attr' => ['class' => 'form-control'],
+                'required' => true,
             ])
             ->add('description', TextType::class, [
-                'attr' => ['class' => 'form-control']
-            ])
-            ->add('city', TextType::class, [
-                'attr' => ['class' => 'form-control']
+                'attr' => ['class' => 'form-control'],
+                'required' => true,
             ])
             ->add('address', TextType::class, [
-                'attr' => ['class' => 'form-control']
+                'attr' => ['class' => 'form-control'],
+                'required' => true,
+            ])
+            ->add('city', TextType::class, [
+                'attr' => ['class' => 'form-control'],
+                'required' => true,
             ])
             ->add('postal_code', TextType::class, [
-                'attr' => ['class' => 'form-control']
+                'attr' => ['class' => 'form-control'],
+                'required' => true,
             ]);
     }
 

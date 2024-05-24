@@ -1,25 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Outils{% endblock %}
+{% block title %}
+    Outils
+{% endblock %}
 
 {% block body %}
     <div class="container">
         <h1 class="mt-5">Liste des outils</h1>
         <div class="row mt-3">
-            <div class="col-md-6">
-                <ul class="list-group">
-                    {% for tool in tools %}
-                        <li class="list-group-item">
-                            <a href="{{ path('app_tools_id', {'id': tool.id}) }}">
-                                <h5>{{ tool.name }}</h5>
-                                <p>{{ tool.description }}</p>
-                            </a>
-
-                            {# Ajoutez d'autres propriétés d'outil que vous souhaitez afficher #}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+            {% for tool in tools %}
+                {% if not tool.maintenance %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ tool.name }}</h5>
+                                <p class="card-text">{{ tool.description }}</p>
+                                <a href="{{ path('app_tools_id', {'id': tool.id}) }}" class="btn btn-primary">Voir l'outil</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

@@ -66,8 +66,11 @@ class __TwigTemplate_a0767941f6f000417484c96572b71045 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Chantier ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 3, $this->source); })()), "title", [], "any", false, false, false, 3), "html", null, true);
+        // line 4
+        echo "    Chantier ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 4, $this->source); })()), "title", [], "any", false, false, false, 4), "html", null, true);
+        echo "
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -76,7 +79,7 @@ class __TwigTemplate_a0767941f6f000417484c96572b71045 extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,32 +89,33 @@ class __TwigTemplate_a0767941f6f000417484c96572b71045 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 8
         echo "    <div class=\"container mt-5\">
         <h1 class=\"text-center\">";
-        // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 7, $this->source); })()), "title", [], "any", false, false, false, 7), "html", null, true);
-        echo "</h1>
-        <p>";
-        // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 8, $this->source); })()), "description", [], "any", false, false, false, 8), "html", null, true);
-        echo "</p>
-        <p>";
         // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 9, $this->source); })()), "city", [], "any", false, false, false, 9), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 9, $this->source); })()), "title", [], "any", false, false, false, 9), "html", null, true);
+        echo "</h1>
+        <div class=\"row mt-4\">
+            <div class=\"col-md-8 offset-md-2\">
+                <div class=\"card\">
+                    <div class=\"card-body\">
+                        <p class=\"card-text\">";
+        // line 14
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 14, $this->source); })()), "description", [], "any", false, false, false, 14), "html", null, true);
+        echo "</p>
+                        <p class=\"card-text\"><strong>Adresse:</strong> ";
+        // line 15
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 15, $this->source); })()), "address", [], "any", false, false, false, 15), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 9, $this->source); })()), "postalCode", [], "any", false, false, false, 9), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 15, $this->source); })()), "postalCode", [], "any", false, false, false, 15), "html", null, true);
+        echo ", ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 15, $this->source); })()), "city", [], "any", false, false, false, 15), "html", null, true);
         echo "</p>
-        <p>latitude ";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 10, $this->source); })()), "latitude", [], "any", false, false, false, 10), "html", null, true);
-        echo "</p>
-        <p>longitude ";
-        // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 11, $this->source); })()), "longitude", [], "any", false, false, false, 11), "html", null, true);
-        echo "</p>
-
-        <div id=\"map\"></div>
+                        <div id=\"map\" style=\"height: 300px;\"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 ";
         
@@ -122,7 +126,7 @@ class __TwigTemplate_a0767941f6f000417484c96572b71045 extends Template
 
     }
 
-    // line 17
+    // line 24
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -132,40 +136,34 @@ class __TwigTemplate_a0767941f6f000417484c96572b71045 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 18
-        echo "    <script src=\"https://unpkg.com/leaflet@1.9.4/dist/leaflet.js\" integrity=\"sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=\" crossorigin=\"\"></script>
+        // line 25
+        echo "    ";
+        $this->displayParentBlock("javascripts", $context, $blocks);
+        echo "
     <script>
-        console.log(";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 20, $this->source); })()), "latitude", [], "any", false, false, false, 20), "html", null, true);
-        echo ");
-        console.log(";
-        // line 21
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 21, $this->source); })()), "longitude", [], "any", false, false, false, 21), "html", null, true);
-        echo ");
         document.addEventListener(\"DOMContentLoaded\", function() {
             var map = L.map('map').setView([";
-        // line 23
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 23, $this->source); })()), "latitude", [], "any", false, false, false, 23), "html", null, true);
+        // line 28
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 28, $this->source); })()), "latitude", [], "any", false, false, false, 28), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 23, $this->source); })()), "longitude", [], "any", false, false, false, 23), "html", null, true);
-        echo "], 13);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 28, $this->source); })()), "longitude", [], "any", false, false, false, 28), "html", null, true);
+        echo "], 15);
 
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'
             }).addTo(map);
 
             L.marker([";
-        // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 29, $this->source); })()), "latitude", [], "any", false, false, false, 29), "html", null, true);
+        // line 34
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 34, $this->source); })()), "latitude", [], "any", false, false, false, 34), "html", null, true);
         echo ", ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 29, $this->source); })()), "longitude", [], "any", false, false, false, 29), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 34, $this->source); })()), "longitude", [], "any", false, false, false, 34), "html", null, true);
         echo "]).addTo(map)
-                .bindPopup('";
-        // line 30
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 30, $this->source); })()), "title", [], "any", false, false, false, 30), "html", null, true);
-        echo "<br>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 30, $this->source); })()), "description", [], "any", false, false, false, 30), "html", null, true);
+                .bindPopup('<b>";
+        // line 35
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 35, $this->source); })()), "title", [], "any", false, false, false, 35), "html", null, true);
+        echo "</b><br>";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["worksite"]) || array_key_exists("worksite", $context) ? $context["worksite"] : (function () { throw new RuntimeError('Variable "worksite" does not exist.', 35, $this->source); })()), "description", [], "any", false, false, false, 35), "html", null, true);
         echo "')
                 .openPopup();
         });
@@ -200,41 +198,46 @@ class __TwigTemplate_a0767941f6f000417484c96572b71045 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  166 => 30,  160 => 29,  149 => 23,  144 => 21,  140 => 20,  136 => 18,  126 => 17,  111 => 11,  107 => 10,  101 => 9,  97 => 8,  93 => 7,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  164 => 35,  158 => 34,  147 => 28,  140 => 25,  130 => 24,  108 => 15,  104 => 14,  96 => 9,  93 => 8,  83 => 7,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Chantier {{ worksite.title }}{% endblock %}
+{% block title %}
+    Chantier {{ worksite.title }}
+{% endblock %}
 
 {% block body %}
     <div class=\"container mt-5\">
         <h1 class=\"text-center\">{{ worksite.title }}</h1>
-        <p>{{ worksite.description }}</p>
-        <p>{{ worksite.city }}, {{ worksite.postalCode }}</p>
-        <p>latitude {{ worksite.latitude }}</p>
-        <p>longitude {{ worksite.longitude }}</p>
-
-        <div id=\"map\"></div>
+        <div class=\"row mt-4\">
+            <div class=\"col-md-8 offset-md-2\">
+                <div class=\"card\">
+                    <div class=\"card-body\">
+                        <p class=\"card-text\">{{ worksite.description }}</p>
+                        <p class=\"card-text\"><strong>Adresse:</strong> {{ worksite.address }}, {{ worksite.postalCode }}, {{ worksite.city }}</p>
+                        <div id=\"map\" style=\"height: 300px;\"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
 {% block javascripts %}
-    <script src=\"https://unpkg.com/leaflet@1.9.4/dist/leaflet.js\" integrity=\"sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=\" crossorigin=\"\"></script>
+    {{ parent() }}
     <script>
-        console.log({{ worksite.latitude }});
-        console.log({{ worksite.longitude }});
         document.addEventListener(\"DOMContentLoaded\", function() {
-            var map = L.map('map').setView([{{ worksite.latitude }}, {{ worksite.longitude }}], 13);
+            var map = L.map('map').setView([{{ worksite.latitude }}, {{ worksite.longitude }}], 15);
 
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'
             }).addTo(map);
 
             L.marker([{{ worksite.latitude }}, {{ worksite.longitude }}]).addTo(map)
-                .bindPopup('{{ worksite.title }}<br>{{ worksite.description }}')
+                .bindPopup('<b>{{ worksite.title }}</b><br>{{ worksite.description }}')
                 .openPopup();
         });
     </script>

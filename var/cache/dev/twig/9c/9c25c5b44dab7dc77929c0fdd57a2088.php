@@ -65,7 +65,9 @@ class __TwigTemplate_e7f5d58ba94b4d33136f215f881a9f9d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Outils";
+        // line 4
+        echo "    Outils
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +76,7 @@ class __TwigTemplate_e7f5d58ba94b4d33136f215f881a9f9d extends Template
 
     }
 
-    // line 5
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,45 +86,47 @@ class __TwigTemplate_e7f5d58ba94b4d33136f215f881a9f9d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 8
         echo "    <div class=\"container\">
         <h1 class=\"mt-5\">Liste des outils</h1>
         <div class=\"row mt-3\">
-            <div class=\"col-md-6\">
-                <ul class=\"list-group\">
-                    ";
+            ";
         // line 11
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["tools"]) || array_key_exists("tools", $context) ? $context["tools"] : (function () { throw new RuntimeError('Variable "tools" does not exist.', 11, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["tool"]) {
             // line 12
-            echo "                        <li class=\"list-group-item\">
-                            <a href=\"";
-            // line 13
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tools_id", ["id" => twig_get_attribute($this->env, $this->source, $context["tool"], "id", [], "any", false, false, false, 13)]), "html", null, true);
-            echo "\">
-                                <h5>";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tool"], "name", [], "any", false, false, false, 14), "html", null, true);
-            echo "</h5>
-                                <p>";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tool"], "description", [], "any", false, false, false, 15), "html", null, true);
-            echo "</p>
-                            </a>
-
-                            ";
-            // line 19
-            echo "                        </li>
-                    ";
+            echo "                ";
+            if ( !twig_get_attribute($this->env, $this->source, $context["tool"], "maintenance", [], "any", false, false, false, 12)) {
+                // line 13
+                echo "                    <div class=\"col-md-4 mb-4\">
+                        <div class=\"card\">
+                            <div class=\"card-body\">
+                                <h5 class=\"card-title\">";
+                // line 16
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tool"], "name", [], "any", false, false, false, 16), "html", null, true);
+                echo "</h5>
+                                <p class=\"card-text\">";
+                // line 17
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tool"], "description", [], "any", false, false, false, 17), "html", null, true);
+                echo "</p>
+                                <a href=\"";
+                // line 18
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tools_id", ["id" => twig_get_attribute($this->env, $this->source, $context["tool"], "id", [], "any", false, false, false, 18)]), "html", null, true);
+                echo "\" class=\"btn btn-primary\">Voir l'outil</a>
+                            </div>
+                        </div>
+                    </div>
+                ";
+            }
+            // line 23
+            echo "            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tool'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 21
-        echo "                </ul>
-            </div>
-        </div>
+        // line 24
+        echo "        </div>
     </div>
 ";
         
@@ -154,33 +158,34 @@ class __TwigTemplate_e7f5d58ba94b4d33136f215f881a9f9d extends Template
      */
     public function getDebugInfo()
     {
-        return array (  123 => 21,  116 => 19,  110 => 15,  106 => 14,  102 => 13,  99 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  129 => 24,  123 => 23,  115 => 18,  111 => 17,  107 => 16,  102 => 13,  99 => 12,  95 => 11,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Outils{% endblock %}
+{% block title %}
+    Outils
+{% endblock %}
 
 {% block body %}
     <div class=\"container\">
         <h1 class=\"mt-5\">Liste des outils</h1>
         <div class=\"row mt-3\">
-            <div class=\"col-md-6\">
-                <ul class=\"list-group\">
-                    {% for tool in tools %}
-                        <li class=\"list-group-item\">
-                            <a href=\"{{ path('app_tools_id', {'id': tool.id}) }}\">
-                                <h5>{{ tool.name }}</h5>
-                                <p>{{ tool.description }}</p>
-                            </a>
-
-                            {# Ajoutez d'autres propriétés d'outil que vous souhaitez afficher #}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+            {% for tool in tools %}
+                {% if not tool.maintenance %}
+                    <div class=\"col-md-4 mb-4\">
+                        <div class=\"card\">
+                            <div class=\"card-body\">
+                                <h5 class=\"card-title\">{{ tool.name }}</h5>
+                                <p class=\"card-text\">{{ tool.description }}</p>
+                                <a href=\"{{ path('app_tools_id', {'id': tool.id}) }}\" class=\"btn btn-primary\">Voir l'outil</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

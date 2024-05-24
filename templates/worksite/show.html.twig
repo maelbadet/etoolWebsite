@@ -1,33 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Chantier {{ worksite.title }}{% endblock %}
+{% block title %}
+    Chantier {{ worksite.title }}
+{% endblock %}
 
 {% block body %}
     <div class="container mt-5">
         <h1 class="text-center">{{ worksite.title }}</h1>
-        <p>{{ worksite.description }}</p>
-        <p>{{ worksite.city }}, {{ worksite.postalCode }}</p>
-        <p>latitude {{ worksite.latitude }}</p>
-        <p>longitude {{ worksite.longitude }}</p>
-
-        <div id="map"></div>
+        <div class="row mt-4">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">{{ worksite.description }}</p>
+                        <p class="card-text"><strong>Adresse:</strong> {{ worksite.address }}, {{ worksite.postalCode }}, {{ worksite.city }}</p>
+                        <div id="map" style="height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
 {% block javascripts %}
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    {{ parent() }}
     <script>
-        console.log({{ worksite.latitude }});
-        console.log({{ worksite.longitude }});
         document.addEventListener("DOMContentLoaded", function() {
-            var map = L.map('map').setView([{{ worksite.latitude }}, {{ worksite.longitude }}], 13);
+            var map = L.map('map').setView([{{ worksite.latitude }}, {{ worksite.longitude }}], 15);
 
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
             L.marker([{{ worksite.latitude }}, {{ worksite.longitude }}]).addTo(map)
-                .bindPopup('{{ worksite.title }}<br>{{ worksite.description }}')
+                .bindPopup('<b>{{ worksite.title }}</b><br>{{ worksite.description }}')
                 .openPopup();
         });
     </script>

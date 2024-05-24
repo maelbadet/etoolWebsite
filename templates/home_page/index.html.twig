@@ -1,33 +1,64 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	<title>Accueil</title>
+	Accueil
 {% endblock %}
 
 {% block body %}
+	<div class="container mt-5">
+		<div class="example-wrapper">
+			<h1>Bienvenue sur le site Etool</h1>
+			<h2>Le premier gestionnaire d'outillage sorti par Clemessy</h2>
+		</div>
 
-	<div class="example-wrapper">
-		<h1>Bienvenu sur le site Etool</h1>
-		<h2>Le premier gestionnaire d'outillage sortis par Clemessy</h2>
+		<div class="mt-4">
+			<h3>Derniers outils créés</h3>
+			<div class="row">
+				{% for tool in tools|slice(0, 3) %}
+					<div class="col-md-4">
+						<div class="card mb-4">
+							<div class="card-body">
+								<h5 class="card-title">{{ tool.name }}</h5>
+								<p class="card-text">{{ tool.description }}</p>
+								<a href="{{ path('app_tools_id', { 'id': tool.id }) }}" class="btn btn-primary">Voir l'outil</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="text-center mt-4">
+				<a href="{{ path('app_tools') }}" class="btn btn-secondary">Voir tous les outils</a>
+			</div>
+		</div>
+
+		<div class="mt-4">
+			<h3>Derniers chantiers créés</h3>
+			<div class="row">
+				{% for worksite in worksites|slice(0, 3) %}
+					<div class="col-md-4">
+						<div class="card mb-4">
+							<div class="card-body">
+								<h5 class="card-title">{{ worksite.title }}</h5>
+								<p class="card-text">{{ worksite.description }}</p>
+								<a href="{{ path('app_worksite_show', { 'id': worksite.id }) }}" class="btn btn-primary">Voir le chantier</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="text-center mt-4">
+				<a href="{{ path('app_worksite') }}" class="btn btn-secondary">Voir tous les chantiers</a>
+			</div>
+		</div>
 	</div>
 
-	<div>
-		<p>
-			Ici, il y aura les derniers outils creer</p>
+	<div class="mt-4">
+		<h3>Derniers emprunts effectués</h3>
+		<p>Ici, il y aura les derniers emprunts effectués</p>
 	</div>
 
-	<div>
-		<p>
-			Ici, il y aura les derniers chantiers creer</p>
-	</div>
-
-	<div>
-		<p>
-			Ici, il y aura les derniers emprunts effectuer</p>
-	</div>
-
-	<div>
-		<p>
-			Ici, il y aura les derniers echange effectuer</p>
+	<div class="mt-4">
+		<h3>Derniers échanges effectués</h3>
+		<p>Ici, il y aura les derniers échanges effectués</p>
 	</div>
 {% endblock %}

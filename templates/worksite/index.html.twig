@@ -1,23 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des chantiers{% endblock %}
+{% block title %}
+    Liste des chantiers
+{% endblock %}
 
 {% block body %}
     <div class="container mt-5">
         <h1 class="text-center">Liste des chantiers</h1>
         <div class="row mt-3">
-            <div class="col-md-12">
-                <ul class="list-group">
-                    {% for worksite in worksites %}
-                        <li class="list-group-item">
-                            <a href="{{ path('app_worksite_show', {id: worksite.id}) }}">
-                                <h5>{{ worksite.title }}</h5>
-                                <p>{{ worksite.description }}</p>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+            {% for worksite in worksites %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ worksite.title }}</h5>
+                            <p class="card-text">{{ worksite.description }}</p>
+                            <a href="{{ path('app_worksite_show', {id: worksite.id}) }}" class="btn btn-primary">Voir le chantier</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

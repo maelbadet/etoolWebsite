@@ -32,7 +32,7 @@ class __TwigTemplate_68dabe6e26c56bb4133a8e0f7243b4ba extends Template
 
     protected function doGetParent(array $context)
     {
-        // line 3
+        // line 1
         return "base.html.twig";
     }
 
@@ -45,7 +45,7 @@ class __TwigTemplate_68dabe6e26c56bb4133a8e0f7243b4ba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "tools/toolId.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "tools/toolId.html.twig", 3);
+        $this->parent = $this->loadTemplate("base.html.twig", "tools/toolId.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -55,7 +55,7 @@ class __TwigTemplate_68dabe6e26c56bb4133a8e0f7243b4ba extends Template
 
     }
 
-    // line 5
+    // line 3
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -74,7 +74,7 @@ class __TwigTemplate_68dabe6e26c56bb4133a8e0f7243b4ba extends Template
 
     }
 
-    // line 7
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,24 +84,31 @@ class __TwigTemplate_68dabe6e26c56bb4133a8e0f7243b4ba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 8
+        // line 6
         echo "    <div class=\"container\">
         <h1 class=\"mt-5\">Détails de l'outil</h1>
-        <div class=\"row mt-3\">
+        <div class=\"row mt-3 justify-content-center align-items-center mt-4\">
             <div class=\"col-md-6\">
                 <div class=\"card\">
-                    <div class=\"card-body\">
+                    <div class=\"card-body d-flex flex-column align-items-center\">
                         <h5 class=\"card-title\">";
-        // line 14
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["tool"]) || array_key_exists("tool", $context) ? $context["tool"] : (function () { throw new RuntimeError('Variable "tool" does not exist.', 14, $this->source); })()), "name", [], "any", false, false, false, 14), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["tool"]) || array_key_exists("tool", $context) ? $context["tool"] : (function () { throw new RuntimeError('Variable "tool" does not exist.', 12, $this->source); })()), "name", [], "any", false, false, false, 12), "html", null, true);
         echo "</h5>
                         <p class=\"card-text\">";
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["tool"]) || array_key_exists("tool", $context) ? $context["tool"] : (function () { throw new RuntimeError('Variable "tool" does not exist.', 15, $this->source); })()), "description", [], "any", false, false, false, 15), "html", null, true);
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["tool"]) || array_key_exists("tool", $context) ? $context["tool"] : (function () { throw new RuntimeError('Variable "tool" does not exist.', 13, $this->source); })()), "description", [], "any", false, false, false, 13), "html", null, true);
         echo "</p>
-                        ";
-        // line 17
-        echo "                    </div>
+                        <div class=\"mt-3\">
+                            <h6>QR Code</h6>
+                            <img src=\"";
+        // line 16
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl((("images/qrCodeSaver/" . twig_get_attribute($this->env, $this->source, (isset($context["tool"]) || array_key_exists("tool", $context) ? $context["tool"] : (function () { throw new RuntimeError('Variable "tool" does not exist.', 16, $this->source); })()), "name", [], "any", false, false, false, 16)) . ".png")), "html", null, true);
+        echo "\" alt=\"QR Code de ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["tool"]) || array_key_exists("tool", $context) ? $context["tool"] : (function () { throw new RuntimeError('Variable "tool" does not exist.', 16, $this->source); })()), "name", [], "any", false, false, false, 16), "html", null, true);
+        echo "\">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -136,27 +143,28 @@ class __TwigTemplate_68dabe6e26c56bb4133a8e0f7243b4ba extends Template
      */
     public function getDebugInfo()
     {
-        return array (  104 => 17,  100 => 15,  96 => 14,  88 => 8,  78 => 7,  59 => 5,  36 => 3,);
+        return array (  106 => 16,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{# templates/tools/toolId.html.twig #}
-
-{% extends 'base.html.twig' %}
+        return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Détails de l'outil{% endblock %}
 
 {% block body %}
     <div class=\"container\">
         <h1 class=\"mt-5\">Détails de l'outil</h1>
-        <div class=\"row mt-3\">
+        <div class=\"row mt-3 justify-content-center align-items-center mt-4\">
             <div class=\"col-md-6\">
                 <div class=\"card\">
-                    <div class=\"card-body\">
+                    <div class=\"card-body d-flex flex-column align-items-center\">
                         <h5 class=\"card-title\">{{ tool.name }}</h5>
                         <p class=\"card-text\">{{ tool.description }}</p>
-                        {# Ajoutez d'autres propriétés d'outil que vous souhaitez afficher #}
+                        <div class=\"mt-3\">
+                            <h6>QR Code</h6>
+                            <img src=\"{{ asset('images/qrCodeSaver/' ~ tool.name ~ '.png') }}\" alt=\"QR Code de {{ tool.name }}\">
+                        </div>
                     </div>
                 </div>
             </div>
