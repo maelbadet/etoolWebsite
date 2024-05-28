@@ -596,3 +596,16 @@ f39bd0,127.0.0.1,GET,https://127.0.0.1:12000/admin?crudAction=new&crudController
 9431f6,127.0.0.1,GET,https://127.0.0.1:12000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5CUserCrudController,1716565079,,200,request
 d51d74,127.0.0.1,GET,https://127.0.0.1:12000/admin?crudAction=edit&crudControllerFqcn=App%5CController%5CAdmin%5CUserCrudController&entityId=3,1716565084,,200,request
 1b189c,127.0.0.1,GET,https://127.0.0.1:12000/,1716565121,,200,request
+351be4,127.0.0.1,GET,https://127.0.0.1:8000/,1716584364,,200,request
+df5f66,127.0.0.1,GET,https://127.0.0.1:8001/,1716585222,,200,request
+d9cb3b,127.0.0.1,GET,https://127.0.0.1:8001/tools/creation,1716585227,,200,request
+6e866c,127.0.0.1,GET,https://127.0.0.1:8001/tools/creation,1716585237,c11ff0,500,request
+c11ff0,127.0.0.1,POST,https://127.0.0.1:8001/tools/creation,1716585237,,500,request
+7e8d7f,127.0.0.1,GET,https://127.0.0.1:8001/tools/creation,1716585244,,200,request
+50c0d4,127.0.0.1,GET,https://127.0.0.1:8001/tools/creation,1716585277,a6f473,500,request
+a6f473,127.0.0.1,POST,https://127.0.0.1:8001/tools/creation,1716585277,,500,request
+e046bd,127.0.0.1,POST,https://127.0.0.1:8001/tools/creation,1716585472,,302,request
+c4c676,127.0.0.1,GET,https://127.0.0.1:8001/tools/creation,1716585472,,200,request
+3e61bc,127.0.0.1,GET,https://127.0.0.1:8001/worksite,1716585476,,200,request
+7cf44b,127.0.0.1,GET,https://127.0.0.1:8001/tools,1716585477,,200,request
+687e98,127.0.0.1,GET,https://127.0.0.1:8001/tools/1,1716585480,,200,request
